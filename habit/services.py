@@ -20,15 +20,21 @@ def message_create(habit_id):
     action = habit.action
 
     if habit.connection_habit_id:
-        message = (f"Доброго времени суток {name}! Пришло время({time})! Необходимо выполнить({action}),"
-                   f" в условленном месте({place}),"
-                   f" а за это можешь: {Habit.objects.get(id=habit.connection_habit_id).action}!")
+        message = (
+            f"Доброго времени суток {name}! Пришло время({time})! Необходимо выполнить({action}),"
+            f" в условленном месте({place}),"
+            f" а за это можешь: {Habit.objects.get(id=habit.connection_habit_id).action}!"
+        )
     elif habit.reward:
-        message = (f"Доброго времени суток {name}! Пришло время({time})! Необходимо выполнить({action}),"
-                   f" в условленном месте({place}), а за это можешь: {habit.reward}!")
+        message = (
+            f"Доброго времени суток {name}! Пришло время({time})! Необходимо выполнить({action}),"
+            f" в условленном месте({place}), а за это можешь: {habit.reward}!"
+        )
     else:
-        message = (f"Доброго времени суток {name}! Пришло время({time})! Необходимо выполнить({action}),"
-                   f" в условленном месте({place}).")
+        message = (
+            f"Доброго времени суток {name}! Пришло время({time})! Необходимо выполнить({action}),"
+            f" в условленном месте({place})."
+        )
 
     return message
 
