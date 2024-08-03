@@ -23,4 +23,3 @@ def send_message_tg():
                     send_tg(chat_id=chat_id, message=text_message)
                     count -= 1
                     habit.save()
-                    
